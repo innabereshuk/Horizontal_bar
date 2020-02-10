@@ -1,0 +1,70 @@
+@mixin font($fz, $c, $fw: inherit, $ff: inherit, $lh: inherit, $fs: inherit) {
+    font-family: $ff;
+    font-weight: $fw;
+    line-height: $lh;
+    font-style: $fs;
+    font-size: $fz;
+    color: $c;
+}
+
+@mixin laptop {
+    @media screen and (max-width: $laptop) {
+      @content;
+    }
+  }
+  
+  @mixin tablets {
+     @media screen and (max-width: $tablets) {
+      @content;
+    }
+  }
+  
+  @mixin phones {
+    @media screen and (max-width: $phones) {
+      @content;
+    }
+  }
+
+@mixin tr {
+    transition: all .4s ease-in;
+}
+
+@mixin hover {
+    @include tr();
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}
+
+@mixin pCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin btn-red {
+    background-color: $btn-red;
+    width: 33rem;
+    min-width: 33rem;
+    @include font(2.4rem, $textColor-light, 300, $text-ff, 1.1);
+    padding: 1.5rem;
+    outline: none;
+    border: $b-size solid transparent;
+}
+
+@mixin btn-green {
+    background-color: $btn-green;
+    @include font(2.2rem, $textColor-light, 300, $text-ff, 1.1);
+    width: 25rem;
+    min-width: 25rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .5rem 2.6rem;
+    outline: none;
+    border: $b-size solid transparent;
+}
+
+
