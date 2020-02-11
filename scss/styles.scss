@@ -28,6 +28,7 @@ body {
 a, button, input {
     transition: all .4s ease-in;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .header {
@@ -42,6 +43,26 @@ a, button, input {
    max-width: 1024px;
    margin: 0 auto;
 }
+
+.section {
+    &__form {
+        background-position: center;
+        background-repeat: no-repeat;
+       background-size: cover;
+    }
+    &__cover {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+    &__video {
+        background-size: cover;
+        background-position: 0 4rem;
+        background-repeat: no-repeat;
+    }
+    }
+
+
 .nav {
     display: flex;
     flex-direction: row;
@@ -56,15 +77,20 @@ a, button, input {
     align-items: center;
     margin-left: 5rem;
     flex: 1 1 60%;
+    max-width: 60%;
     .vector {
         transform: translate(-150%, 0);
+    }
+    h3 {
+        @include font(2.4rem, $textColor-dark, 300, $text-ff, 1.2);
+        margin: 0;
     }
 }
 
 .contact {
    text-align: right;
    flex: 1 1 40%;
-   flex-wrap: wrap;
+   max-width: 40%;
     &__phone {
         @include font(3rem, $textColor-dark, 300, $text-ff, 1.2);
         word-spacing: 0;
@@ -84,14 +110,6 @@ a, button, input {
             border: $b-size solid $btn-green;
             color: $btn-green;
         }
-    }
-}
-
-.section {
-    &__cover {
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
     }
 }
 
@@ -139,6 +157,7 @@ a, button, input {
             &:focus,
             &:active {
                 color: $btn-red;
+                transform: rotate(235deg);
             }
        }
        &--circle {
@@ -158,11 +177,15 @@ a, button, input {
     }
 }
 
-.black {
+.line-through {
     color: $textColor-dark;
     font-size: 2.2rem;
     text-decoration: line-through;
     font-weight: 300;
+    &--light {
+        color: $textColor-light;
+        margin: 0 .5rem;
+    }
 }
 .red {
     color: $btn-red;
@@ -177,7 +200,17 @@ a, button, input {
     &--24 {
         font-size: 2.4rem;
     }
-   
+}
+
+.white {
+    color: $textColor-light;
+    font-size: 3rem;
+    font-weight: 700;
+    &--smoll {
+        color: $textColor-light;
+        font-size: 2.2rem;
+        font-weight: 400;
+    }
 }
 
 .span {
@@ -188,6 +221,10 @@ a, button, input {
 .bolder {
     @include font(1.8rem, $textColor-dark, 700, $text-ff, 1);
     margin-bottom: 1.2rem;
+}
+
+.light {
+    @include font(1.8rem, $textColor-light, 300, $text-ff, 1);
 }
 
 .cont {
@@ -270,6 +307,7 @@ a, button, input {
         border: $b-size solid $btn-red;
     }
 }
+
 
 .ico {
     width: 2rem;
@@ -364,7 +402,7 @@ a, button, input {
         align-items: center;
         justify-content: center;
         padding: 1.5rem 0;
-        p {
+        h2 {
             margin-top: 1.3rem;
             @include font(2.4rem, $textColor-light, 300, $text-ff, 1);
             span {
@@ -388,4 +426,162 @@ a, button, input {
 .grid__item:nth-child(5),
 .grid__item:nth-child(6) {
     padding-bottom: 3rem;
+}
+
+
+// Section description
+
+.title {
+    margin: 0;
+    padding: 5rem 0;
+    text-align: center;
+    &--dark {
+        @include font(3.6rem, $textColor-dark, 300, $text-ff, 1.2);
+    }
+    &--light {
+        @include font(3.6rem, $textColor-light, 300, $text-ff, 1.2);
+    }
+}
+h3 {
+    @include font(2.4rem, $textColor-dark, 400, $text-ff, 1.2); 
+    margin: 0;
+}
+
+p {
+    @include font(1.8rem, $textColor-dark, 300, $text-ff, 1.2); 
+    margin: 0;
+    margin: 3rem 0;
+}
+
+.desc {
+    display: flex;
+       &__item{
+        margin: 0 3.5rem;
+    }
+}
+
+
+.price {
+    display: flex;
+    width: 41.2rem;
+    max-width: 41.2rem;
+    color: $textColor-light;
+    text-align: center;
+    &__rate {
+        flex: 1 1 77%;
+        padding: 1rem;
+    }
+    &__discount {
+        flex: 1 1 23%;
+        background-color: $brend-color;
+        padding: 1rem;
+        position: relative;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-top: 28px solid transparent;
+            border-right: 15px solid $brend-color;
+            border-bottom: 28px solid transparent;
+            top: 50%;
+            left: 0;
+            transform: translate(-100%, -50%);
+        }
+    }
+
+}
+
+.img--sm {
+    width: 41.2rem;
+    max-width: 41.2rem;
+    height: auto;
+    display: flex;
+    margin: 2rem 0 4rem;
+}
+
+.pic {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    &--sm {
+        width: calc(41.2rem / 5);
+        
+    }
+}
+
+// section form
+
+#form2 {
+    display: flex;
+    align-items: center;
+     padding: 0 3rem;
+    input {
+       margin: 4.5rem 1.5rem 3rem;
+       &:first-child {
+           margin: 4.5rem 1.5rem 3rem 0;
+       }
+    }
+    input[type="button"] {
+        width: 22rem;
+        min-width: 22rem;
+        margin: 3.5rem 0 2rem 1.5rem;
+    }
+}
+
+.product {
+    &__card {
+        padding: 0 3rem 2rem;
+       p {
+           margin: 0;
+           margin-bottom: 3rem;
+           color: $textColor-light;
+       }
+    }
+}
+
+.good {
+    display: flex;
+    padding: 0 3rem;
+    margin: -3.3rem 0 5rem;
+    &__items {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 25%;
+        margin-right: 2rem;
+    }
+    &__about {
+        flex: 1 1 calc(75% - 2rem);
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-basis: 50%;
+    text-align: center;
+    position: relative;
+    &__img {
+        max-width: 100%;
+        min-width: 100%;
+    }
+    &__name {
+        display: block;
+        background-color: $textColor-dark;
+        @include font(1.8rem, $textColor-light, 300, $text-ff, 1.2); 
+        padding: 1rem;
+        position: absolute;
+        top: 3.3rem;
+        left: 0;
+        right: 0;
+    }
+}
+
+.videos {
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    transform: translate(100%, 0);
+    
 }
