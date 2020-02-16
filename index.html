@@ -39,9 +39,9 @@
                 <div class="wrapper">
                     <div class="images">
                         <div class="image">
-                            <img class="image__pic" src="image/turnik.png" alt="Turnik">
+                            <img class="image__pic" id="img" src="image/turnik.png" alt="Turnik">
                             <div class="image__content">
-                                <i class="fas fa-undo"></i>
+                               <button id="btn"><i class="fas fa-undo"></i></button>
                                 <span>Переворачивается<br>
                                     <span class="bold">за 5 секунд</span>
                                </span>
@@ -255,11 +255,11 @@
                 <div class="good">
                     <div class="good__items">
                         <div class="card">
-                             <img src="image/hooks.png" alt="Hooks" class="card__img">
+                             <img src="image/hooks.jpg" alt="Hooks" class="card__img">
                              <span class="card__name">Крюки для перекладины</span>
                         </div>
                         <div class="card">
-                             <img src="image/loops.png" alt="Loops" class="card__img">
+                             <img src="image/loops.jpg" alt="Loops" class="card__img">
                              <span class="card__name">Резиновые петли</span>
                         </div>
                     </div>
@@ -281,19 +281,30 @@
         </section>
 
 
-        <section class="section section__video" style="background-image: url(image/motivating-training.png);">
+        <section class="section section__video" style="background-image: url(image/motivating-training.jpg);">
             <div class="container">
                 <h1 class="title title--light">ВИДЕО</h1>
                 
-                    <!-- <div class="wrapp__image">
-                        <img src="image/kach_turnik.png" alt="Kach">
-                    </div> -->
-                    <div class="videos">
-                        <span class="light">Видео Отзыв о Домашнем Турник Брусья Пресс 3 в 1:</span>
-                        <video src=""></video>
-                        <span class="light">Видео обзор турника тра-та-та:</span>
-                        <video src=""></video>
-                    </div>
+                   
+                         <!-- <div class="wrapp__image">
+                            <img src="image/kach_turnik2.jpg" alt="Kach">
+                        </div>  -->
+                        <div class="videos">
+                            <span class="light">Видео Отзыв о Домашнем Турник Брусья Пресс 3 в 1:</span>
+                            <video controls="controls" muted poster="image/poster.jpg">
+                                <source src="video/Drift - 1137.mp4" type="video/mp4">
+                                <source src="video/Drift - 1137.webm" type="video/webm">
+                                <source src="video/Drift - 1137.ogv" type="video/ogg">
+                            </video>
+                            <span class="light">Видео обзор турника:</span>
+                            
+                            <video controls="controls" muted poster="image/poster.jpg">
+                                <source src="video/Training Apparatus - 1087.mp4" type="video/mp4">
+                                <source src="video/Training Apparatus - 1087.webm" type="video/webm">
+                                <source src="video/Training Apparatus - 1087.ogv" type="video/ogg">
+                            </video>
+                        </div>
+                   
                 
             </div>
         </section>
@@ -309,7 +320,57 @@
         <div class="container"></div>
     </footer>
 
-    
+    <script>
+
+          let i=0;
+          let image=document.getElementById("img");
+          let imgs=new Array('image/turnik.png', 'image/turnik2.png', 'image/turnik3.png', 'image/turnik4.png', 'image/turnik5.png');
+          let btn = document.getElementById('btn');
+          
+
+        //  ФУНКЦИЯ, ВЫВОДЯЩАЯ КАРТИКИ ПО ОЧЕРЕДИ ИЗ МАССИВА imgs
+          function imgsrc(){
+              i++;
+              image.src=imgs[i];
+              
+              if (i == imgs.length) {
+                  i = 0;
+                  image.src = imgs[i];
+                }
+            };
+                       
+            btn.addEventListener('click', function(e) {
+                imgsrc();
+            });
+
+
+        // Функция, меняющая цвет иконки на кнопке с ограничением в 1с
+            function colorBtn() {
+                let original = btn.style.color;
+                btn.style.color = 'red';
+
+                window.setTimeout(function() {
+                    btn.style.color = original; 
+                }, 1000);
+            }
+        // Функция, поворачивающая кнопку при смене каждой картинки на 360 градусов
+            function rotate() {
+                btn.style.transform = "rotate(" +i*(-360) + "deg)";
+                window.requestAnimationFrame(rotate);
+            }
+            let id = window.requestAnimationFrame(rotate);
+
+        // Функция, которая выполняет все предыдущие с периодичностью в 5 секунд  
+            setInterval(function() {
+                 imgsrc();
+                 rotate();
+                 colorBtn();
+            }, 5000 );
+            
+            
+       
+        
+    </script>
     <script src="https://kit.fontawesome.com/d357e3b57e.js" crossorigin="anonymous"></script>
 </body>
 </html>

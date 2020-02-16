@@ -356,8 +356,10 @@ a, button, input {
 
 .section__video {
   background-size: cover;
-  background-position: 0 4rem;
+  background-position: center;
   background-repeat: no-repeat; }
+  .section__video .container h1 {
+    margin-bottom: 5rem; }
 
 .nav {
   display: -webkit-box;
@@ -513,14 +515,7 @@ a, button, input {
     .image__content .fa-undo {
       display: block;
       font-size: 3rem;
-      font-weight: 900;
-      margin-right: 2rem; }
-      .image__content .fa-undo:hover, .image__content .fa-undo:focus, .image__content .fa-undo:active {
-        color: #970909;
-        -webkit-transform: rotate(235deg);
-        -ms-transform: rotate(235deg);
-        -o-transform: rotate(235deg);
-        transform: rotate(235deg); }
+      font-weight: 900; }
     .image__content--circle {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -543,6 +538,28 @@ a, button, input {
       -ms-transform: translate(-80%, -10%);
       -o-transform: translate(-80%, -10%);
       transform: translate(-80%, -10%); }
+
+#btn {
+  color: black;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: 5rem;
+  height: 5rem;
+  padding: 1rem;
+  margin-right: 2rem;
+  margin-left: -1rem; }
+
+#btn:focus,
+#btn:focus {
+  color: #970909;
+  -webkit-transform: rotate(-360deg);
+  -ms-transform: rotate(-360deg);
+  -o-transform: rotate(-360deg);
+  transform: rotate(-360deg);
+  -webkit-transition: all .4s ease-in;
+  -o-transition: all .4s ease-in;
+  transition: all .4s ease-in; }
 
 .line-through {
   color: #333;
@@ -1037,7 +1054,15 @@ p {
   -ms-flex-direction: column;
   flex-direction: column;
   max-width: 50%;
-  -webkit-transform: translate(100%, 0);
-  -ms-transform: translate(100%, 0);
-  -o-transform: translate(100%, 0);
-  transform: translate(100%, 0); }
+  -webkit-transform: translate(100%, -8%);
+  -ms-transform: translate(100%, -8%);
+  -o-transform: translate(100%, -8%);
+  transform: translate(100%, -8%); }
+  .videos span {
+    margin: 3rem 0; }
+
+video {
+  max-width: 48.5rem;
+  height: 30rem;
+  min-height: 30rem;
+  outline: none; }

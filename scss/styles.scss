@@ -3,6 +3,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'mixins';
+// @import 'swiper';
 
 
 * {
@@ -57,8 +58,11 @@ a, button, input {
     }
     &__video {
         background-size: cover;
-        background-position: 0 4rem;
+        background-position: center;
         background-repeat: no-repeat;
+        .container h1 {
+            margin-bottom: 5rem;
+        }
     }
     }
 
@@ -152,13 +156,14 @@ a, button, input {
             display: block;
             font-size: 3rem;
             font-weight: 900;
-            margin-right: 2rem;
-            &:hover,
-            &:focus,
-            &:active {
-                color: $btn-red;
-                transform: rotate(235deg);
-            }
+           
+          
+            // &:hover,
+            // &:focus,
+            // &:active {
+            //     color: $btn-red;
+            //     transform: rotate(235deg);
+            // }
        }
        &--circle {
            display: flex;
@@ -176,6 +181,28 @@ a, button, input {
         
     }
 }
+
+ #btn {
+     color: black;
+     outline: none;
+     border: none;
+     background-color: transparent;
+     width: 5rem;
+     height:5rem;
+     padding: 1rem;
+     margin-right: 2rem;
+     margin-left: -1rem;
+    //  transform: rotate(0deg);
+    }
+    
+  
+#btn:focus,
+#btn:focus {
+    color: $btn-red;
+     transform: rotate(-360deg);
+     @include hover;
+}
+
 
 .line-through {
     color: $textColor-dark;
@@ -578,10 +605,21 @@ p {
     }
 }
 
+// Section video
+
 .videos {
-    display: flex;
-    flex-direction: column;
-    max-width: 50%;
-    transform: translate(100%, 0);
+        display: flex;
+        flex-direction: column;
+        max-width: 50%;
+        transform: translate(100%, -8%);
+        span {
+            margin: 3rem 0;
+        }
+}
     
+video  {
+   max-width: 48.5rem;
+   height: 30rem;
+   min-height: 30rem;
+   outline: none;
 }
