@@ -3,7 +3,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'mixins';
-// @import 'swiper';
+
 
 
 * {
@@ -156,15 +156,7 @@ a, button, input {
             display: block;
             font-size: 3rem;
             font-weight: 900;
-           
-          
-            // &:hover,
-            // &:focus,
-            // &:active {
-            //     color: $btn-red;
-            //     transform: rotate(235deg);
-            // }
-       }
+         }
        &--circle {
            display: flex;
            flex-direction: column;
@@ -252,6 +244,12 @@ a, button, input {
 
 .light {
     @include font(1.8rem, $textColor-light, 300, $text-ff, 1);
+}
+
+.blue {
+    display: block;
+    @include font(1.8rem, #0c3c6b, 400, $text-ff, 1);
+    text-align: end;
 }
 
 .cont {
@@ -460,8 +458,9 @@ a, button, input {
 
 .title {
     margin: 0;
-    padding: 5rem 0;
+    padding: 5rem 2rem;
     text-align: center;
+    text-transform: uppercase;
     &--dark {
         @include font(3.6rem, $textColor-dark, 300, $text-ff, 1.2);
     }
@@ -570,27 +569,28 @@ p {
 
 .good {
     display: flex;
-    padding: 0 3rem;
-    margin: -3.3rem 0 5rem;
+    flex-direction: column;
+    padding: 0 3rem 5rem;
     &__items {
         display: flex;
-        flex-direction: column;
-        flex: 1 1 25%;
-        margin-right: 2rem;
+        flex: 1 1 50%;
+        &:nth-child(1) {
+            margin-bottom: 3rem;
+        }
     }
-    &__about {
-        flex: 1 1 calc(75% - 2rem);
+    & p {
+        margin: 0;
     }
+    
 }
 
 .card {
     display: flex;
     flex-direction: column-reverse;
-    flex-basis: 50%;
     text-align: center;
     position: relative;
+    margin-right: 2rem;
     &__img {
-        max-width: 100%;
         min-width: 100%;
     }
     &__name {
@@ -599,7 +599,7 @@ p {
         @include font(1.8rem, $textColor-light, 300, $text-ff, 1.2); 
         padding: 1rem;
         position: absolute;
-        top: 3.3rem;
+        top: 0;
         left: 0;
         right: 0;
     }
@@ -623,3 +623,50 @@ video  {
    min-height: 30rem;
    outline: none;
 }
+
+// Section feedbacks
+
+.feedbacks {
+    display: flex;
+    flex-direction: column;
+    margin: 0 3rem 5rem;
+}
+
+.feedback {
+    display: flex;
+    flex: 1 1 calc(100% / 3);
+    margin: 1.5rem 0;
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+        .feedback__desc {
+            margin: 0;
+            margin-right: 2rem;
+        }
+     }
+    &__img {
+        min-width: 13rem;
+        height: 100%;
+        align-self: flex-start;
+     }
+    &__pic {
+        max-width: 100%;
+        min-height: 100%;
+    }
+    &__desc {
+        margin: 0;
+        margin-left: 2rem;
+    }
+  
+}
+
+// Section foto
+
+.pictures{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1.5fr;
+    gap: 50px;
+    margin: 0 12.5rem;
+    
+}
+
