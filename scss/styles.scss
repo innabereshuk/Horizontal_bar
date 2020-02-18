@@ -71,7 +71,7 @@ a, button, input {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 2.5rem;
 }
 
 .logo {
@@ -79,7 +79,7 @@ a, button, input {
     @include font(2.4rem, $textColor-dark, 300, $text-ff, 1.2);
     text-align: center;
     align-items: center;
-    margin-left: 5rem;
+    margin-left: 2.5rem;
     flex: 1 1 60%;
     max-width: 60%;
     .vector {
@@ -121,23 +121,22 @@ a, button, input {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding-top: 11.5rem;
+    padding: 13rem 2.5rem 0;
+    
 }
 
 .images {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 8rem;
-    max-width: 63%;
-    
+    flex-basis: 63%;
 }
 
 .image {
     display: flex;
     flex-direction: column;
     &:nth-child(2) {
-        padding-top: 8rem;
+        padding-top: 12rem;
         margin-left: -8.5rem;
         flex-direction: column-reverse;
         position: relative;
@@ -148,7 +147,7 @@ a, button, input {
        flex-direction: row;
        justify-content: start;
        align-items: center;
-       margin-top: 2.5rem;
+       margin-top: 2rem;
        .bold {
            font-weight: 500;
        }
@@ -174,7 +173,7 @@ a, button, input {
     }
 }
 
- #btn {
+ #btn1, #btn2 {
      color: black;
      outline: none;
      border: none;
@@ -188,8 +187,8 @@ a, button, input {
     }
     
   
-#btn:focus,
-#btn:focus {
+.btn:focus,
+.btn:focus {
     color: $btn-red;
      transform: rotate(-360deg);
      @include hover;
@@ -234,7 +233,7 @@ a, button, input {
 
 .span {
     display: block;
-    line-height: 1;    
+    line-height: 1; 
 }
 
 .bolder {
@@ -252,26 +251,35 @@ a, button, input {
     text-align: end;
 }
 
+.uppercase{
+   text-transform: uppercase;
+}
+
+#timer {
+    font-size: 4rem;
+    font-weight: 400;
+}
+
 .cont {
     display: flex;
     flex-direction: column;
-    max-width: 37%;
+   flex-basis: 37%;
 }
 
 .form {
-    width: 35rem;
+    width: 36rem;
     // height: 34rem;
     display: flex;
     flex-direction: column;
     // max-width: 100%;
-    top: 2rem;
+    // top: 2rem;
     align-items: center;
     background: $textColor-light;
     &__title {
         background-color: $brend-color;
         padding: 1rem;
         text-align: center;
-        width: 100%;
+        min-width: 100%;
         &--big {
             @include font(2.4rem, $textColor-light, 500, $text-ff, 1.2);
         }
@@ -390,25 +398,23 @@ a, button, input {
     }
     &__timer {
         flex: 1 1 calc(100% - 28.5% - 4.2%);
-        padding: 1.2rem 1rem;
+        padding: .8rem 1rem;
     }
                     
 }
 
 .wrap {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     &__item {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        flex-basis: 33.33333333%;
-        font-weight: 300;
-        font-size: 1.4rem;
-        
+       display: flex;
+       justify-content: space-evenly;
+       text-align: center;
+        margin: 0;
     }
 }
+
+
 
 // Section about
 
@@ -667,6 +673,75 @@ video  {
     grid-template-rows: 1fr 1.5fr;
     gap: 50px;
     margin: 0 12.5rem;
-    
+    padding-bottom: 5rem;
 }
+
+.picture {
+    display: flex;
+    position: relative;
+    width: 100%;
+    & img {
+       min-width: 100%;
+    }
+}
+
+.caption {
+    display: flex;
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-transform: capitalize;
+    text-align: center;
+    &--before {
+        flex-basis: 50%;
+        background-color: $textColor-dark;
+        @include font (2.4rem, $brend-color, 300, $text-ff, 1.2); 
+        align-self: center;
+        padding: 1.1rem;
+        
+    }
+    &--after {
+        background-color: $brend-color;
+        flex-basis: 50%;
+        @include font (2.4rem, $textColor-dark, 300, $text-ff, 1.2); 
+        align-self: center;
+        padding: 1.1rem;
+    }
+}
+
+//Section cover--lower
+
+.lower {
+    padding-top: 2rem;
+}
+
+// Footer
+
+.footer {
+    .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 4rem;
+    }
+    &__text {
+        flex-basis: 63%;
+        h3 {
+        line-height: 1.4;
+        }
+    }
+    &__phone {
+        flex-basis: 37%;
+        .contact {
+            max-width: 100%;
+        }
+    }
+}
+
+
+
+
 

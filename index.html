@@ -41,7 +41,7 @@
                         <div class="image">
                             <img class="image__pic" id="img" src="image/turnik.png" alt="Turnik">
                             <div class="image__content">
-                               <button id="btn"><i class="fas fa-undo"></i></button>
+                               <button id="btn1"><i class="fas fa-undo"></i></button>
                                 <span>Переворачивается<br>
                                     <span class="bold">за 5 секунд</span>
                                </span>
@@ -51,12 +51,12 @@
                             <img class="image__pic" src="image/kach.png" alt="Kach">
                             <div class="image__content image__content--circle">
                                 <span class="line-through">4 500 р.</span>
-                                <span class="red">3800</span>
+                                <span class="red">3 890</span>
                             </div>
                         </div>
                     </div>
                   <div class="cont">
-                       <form action="" method="POST" class="form" id="form1">
+                       <form action="" method="POST" class="form" id="form_1">
                             <div class="form__title">
                                 <span class="form__title--big">УСПЕЙ КУПИТЬ</span><br> 
                                 <span class="form__title--smoll">и наш специалист свяжется с Вами</span>
@@ -88,18 +88,15 @@
                                 <span class="span red red--24">15 %</span>
                             </div>
                             <div class="countdown__timer">
-                                <span class="span">До конца акции осталось:</span>
+                                <span class="span span--margin">До конца акции осталось:</span>
                                 <div class="wrap">
-                                    <span class="wrap__item">
-                                        <span class="red red--sm">15</span>часов
-                                    </span>
-                                    <span class="wrap__item">
-                                        <span class="red red--sm">48</span>минут
-                                    </span>
-                                    <span class="wrap__item">
-                                        <span class="red red--sm">27</span>секунд
-                                    </span>
-                            </div>
+                                    <span class="wrap__item red" id="timer"></span>
+                                    <p class="wrap__item">
+                                        <span>часов</span>
+                                        <span>минут</span>
+                                        <span>секунд</span>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                   </div>
@@ -343,76 +340,133 @@
                 <div class="pictures">
                     <div class="picture">
                         <img src="image/biceps_1.jpg" alt="Biceps">
+                        <div class="caption">
+                            <div class="caption--before">До</div>
+                            <div class="caption--after">После</div>
+                        </div>
                     </div>
                     <div class="picture">
                         <img src="image/biceps_2.png" alt="Biceps">
+                        <div class="caption">
+                            <div class="caption--before">До</div>
+                            <div class="caption--after">После</div>
+                        </div>
                     </div>
                     <div class="picture">
                         <img src="image/biceps_3.jpg" alt="Biceps">
+                        <div class="caption">
+                            <div class="caption--before">До</div>
+                            <div class="caption--after">После</div>
+                        </div>
                     </div>
                     <div class="picture">
                         <img src="image/biceps_4.jpg" alt="Biceps">
+                        <div class="caption">
+                            <div class="caption--before"></div>
+                            <div class="caption--after"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+   
+   
+        <section class="section section__cover section__cover--lower" style="background: url(image/bg-light.png);">
+            <div class="container">
+                <div class="wrapper lower">
+                    <div class="images">
+                        <div class="image">
+                            <img class="image__pic" id="img2" src="image/turnik.png" alt="Turnik">
+                            <div class="image__content">
+                               <button id="btn2"><i class="fas fa-undo"></i></button>
+                                <span>Переворачивается<br>
+                                    <span class="bold">за 5 секунд</span>
+                               </span>
+                            </div>
+                        </div>
+                        <div class="image">
+                            <img class="image__pic" src="image/kach.png" alt="Kach">
+                            <div class="image__content image__content--circle">
+                                <span class="line-through">4 500 р.</span>
+                                <span class="red">3 890</span>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="cont">
+                       <form action="" method="POST" class="form" id="form_2">
+                            <div class="form__title">
+                                <span class="form__title--big">УСПЕЙ КУПИТЬ</span><br> 
+                                <span class="form__title--smoll">и наш специалист свяжется с Вами</span>
+                            </div>
+                            <input type="text" name="username" placeholder="Имя">
+                            <input type="tel" name="phone" placeholder="Телефон">
+                            <input type="email" name="email" placeholder="E-mail">
+                            <div class="form__label">
+                                <input type="checkbox" name="one2" id="one2">
+                                <label for="#one2">Крюки для перекладины и тяги (650 руб.)</label>
+                                <a href="#" class="ico">
+                                    <i class="fas fa-question-circle"></i>
+                                </a>
+                            </div>
+                                
+                            <div class="form__label">
+                                <input type="checkbox" name="two2" id="two2">
+                                <label for="#two2">Резиновые петли (750 руб.)</label>
+                                <a href="#" class="ico">
+                                    <i class="fas fa-question-circle"></i>
+                                </a>
+                            </div>
+                            <input type="button" form="#form2" value="Заказать">
+                        </form>
+                        <div class="countdown">
+                            <div class="countdown__event">
+                                <span class="span bolder">АКЦИЯ!</span>
+                                <span class="span">Скидка</span>
+                                <span class="span red red--24">15 %</span>
+                            </div>
+                            <div class="countdown__timer">
+                                <span class="span">До конца акции осталось:</span>
+                                <div class="wrap">
+                                    <span class="wrap__item">
+                                        <span class="red red--sm">15</span>часов
+                                    </span>
+                                    <span class="wrap__item">
+                                        <span class="red red--sm">48</span>минут
+                                    </span>
+                                    <span class="wrap__item">
+                                        <span class="red red--sm">27</span>секунд
+                                    </span>
+                            </div>
+                            </div>
+                        </div>
+                  </div>
+                </div>
+            </div>
+        </section>
     </main>
-
-    <footer>
-        <div class="container"></div>
+    <footer class="footer">
+        <div class="container">
+        <div class="footer__text">
+            <h3><span class="uppercase">Остались вопросы?</span><br>Закажите обратный звонок и мы вам перезвоним!</h3>
+         </div>
+        <div class="footer__phone">
+            <div class="contact">
+                <div class="contact__phone">
+                    <i class="fas fa-mobile-alt"></i> 
+                    8(929)<span class="bold">700-28-75</span>
+                </div>
+               <a href="tel:8(929)700-28-75" class="btn contact__btn">Заказать звонок</a>
+            </div>
+        </div>
+    </div>
     </footer>
+    
 
-    <script>
-
-          let i=0;
-          let image=document.getElementById("img");
-          let imgs=new Array('image/turnik.png', 'image/turnik2.png', 'image/turnik3.png', 'image/turnik4.png', 'image/turnik5.png');
-          let btn = document.getElementById('btn');
-          
-
-        //  ФУНКЦИЯ, ВЫВОДЯЩАЯ КАРТИКИ ПО ОЧЕРЕДИ ИЗ МАССИВА imgs
-          function imgsrc(){
-              i++;
-              image.src=imgs[i];
-              
-              if (i == imgs.length) {
-                  i = 0;
-                  image.src = imgs[i];
-                }
-            };
-                       
-            btn.addEventListener('click', function(e) {
-                imgsrc();
-            });
-
-
-        // Функция, меняющая цвет иконки на кнопке с ограничением в 1с
-            function colorBtn() {
-                let original = btn.style.color;
-                btn.style.color = 'red';
-
-                window.setTimeout(function() {
-                    btn.style.color = original; 
-                }, 1000);
-            }
-        // Функция, поворачивающая кнопку при смене каждой картинки на 360 градусов
-            function rotate() {
-                btn.style.transform = "rotate(" +i*(-360) + "deg)";
-                window.requestAnimationFrame(rotate);
-            }
-            let id = window.requestAnimationFrame(rotate);
-
-        // Функция, которая выполняет все предыдущие с периодичностью в 5 секунд  
-            setInterval(function() {
-                 imgsrc();
-                 rotate();
-                 colorBtn();
-            }, 5000 );
-            
+   
             
        
-        
-    </script>
+    <script src="js/switch.js"></script>
+    <script src="js/countdown.js"></script>
     <script src="https://kit.fontawesome.com/d357e3b57e.js" crossorigin="anonymous"></script>
 </body>
 </html>
