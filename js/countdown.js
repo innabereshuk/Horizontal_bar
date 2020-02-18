@@ -6,13 +6,12 @@
         minutes: 0,
         seconds: 0,
         init: function() {
-            let date = new Date();
-            this.hours = date.getHours();
-            this.minutes = date.getMinutes();
-            this.seconds = date.getSeconds();
+            this.hours ='12';
+            this.minutes = '30';
+            this.seconds = '20';
         },
         display: function() {
-            return`${this._f(this.hours + 10)}  :  ${this._f(this.minutes)}  :  ${this._f(this.seconds)}`;
+            return`${this._f(this.hours)}  :  ${this._f(this.minutes)}  :  ${this._f(this.seconds)}`;
         },
         _f: function(str) {
             return('0' +str).substr(-2);
@@ -32,6 +31,7 @@
                              this.hours;
 
                 document.getElementById('timer').innerHTML = this.display();
+                document.getElementById('timer_2').innerHTML = this.display();
 
                 if(this.seconds == 0 && this.minutes == 0 && this.hours == 0) {
                     clearInterval(interval);
@@ -45,5 +45,8 @@
 
      let timeDown = Object.assign({}, time);
      timeDown.countDown();
+
+     let timeDown_2 = Object.assign({}, time);
+     timeDown_2.countDown();
      console.log(time);
 })();

@@ -64,14 +64,20 @@ a, button, input {
             margin-bottom: 5rem;
         }
     }
+    &__description {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: -1rem;
     }
+}
 
 
 .nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 1.5rem 2.5rem;
+    padding: 1rem 2.5rem;
 }
 
 .logo {
@@ -121,7 +127,7 @@ a, button, input {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 13rem 2.5rem 0;
+    padding: 12.5rem 2.5rem 0;
     
 }
 
@@ -129,7 +135,7 @@ a, button, input {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-basis: 63%;
+    flex-basis: 64%;
 }
 
 .image {
@@ -183,7 +189,11 @@ a, button, input {
      padding: 1rem;
      margin-right: 2rem;
      margin-left: -1rem;
-    //  transform: rotate(0deg);
+     &:focus,
+     &:active,
+     &:checked {
+         transform: rotate(-360deg);
+     }
     }
     
   
@@ -210,11 +220,6 @@ a, button, input {
     margin-top: 1rem;
     font-size: 3rem;
     font-weight: 700;
-    &--sm {
-        font-size: 3.6rem;
-        font-weight: 300;
-        line-height: 1;
-    }
     &--24 {
         font-size: 2.4rem;
     }
@@ -238,7 +243,7 @@ a, button, input {
 
 .bolder {
     @include font(1.8rem, $textColor-dark, 700, $text-ff, 1);
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .light {
@@ -255,36 +260,31 @@ a, button, input {
    text-transform: uppercase;
 }
 
-#timer {
-    font-size: 4rem;
-    font-weight: 400;
-}
 
 .cont {
     display: flex;
     flex-direction: column;
-   flex-basis: 37%;
+    flex-basis: 36%;
 }
 
 .form {
-    width: 36rem;
-    // height: 34rem;
+    width: 35rem;
     display: flex;
     flex-direction: column;
-    // max-width: 100%;
-    // top: 2rem;
     align-items: center;
     background: $textColor-light;
     &__title {
         background-color: $brend-color;
-        padding: 1rem;
+        padding: 1rem 2rem;
         text-align: center;
         min-width: 100%;
-        &--big {
-            @include font(2.4rem, $textColor-light, 500, $text-ff, 1.2);
+        h3 {
+            color: $textColor-light;
+            line-height: 1;
         }
-        &--smoll {
-            @include font(1.8rem, $textColor-light, 300, $text-ff, 1.2);
+        p {
+            @include font(1.8rem, $textColor-light, 300, $text-ff, 1);
+            margin: 0;
         }
     }
     &__label {
@@ -379,9 +379,7 @@ a, button, input {
         flex-direction: column;
         justify-content: center;
         position: relative;
-        flex: 1 1 28.5%;
-        // margin-right: 4.2%;
-        padding: 1.2rem .5rem;
+        flex: 1 1 28%;
         background-color: $brend-color;
         &::before {
             content: "";
@@ -397,10 +395,18 @@ a, button, input {
         }
     }
     &__timer {
-        flex: 1 1 calc(100% - 28.5% - 4.2%);
-        padding: .8rem 1rem;
+        flex: 1 1 calc(100% - 28% - 4.2%);
+        padding: 1rem;
+        margin-left: 1rem;
     }
                     
+}
+
+
+#timer, #timer_2 {
+    @include font(3.6rem, $btn-red, 300, $text-ff, 1);
+    margin: .2rem 0;
+   
 }
 
 .wrap {
@@ -410,7 +416,7 @@ a, button, input {
        display: flex;
        justify-content: space-evenly;
        text-align: center;
-        margin: 0;
+    margin: 0;
     }
 }
 
@@ -487,8 +493,12 @@ p {
 
 .desc {
     display: flex;
-       &__item{
+    padding-bottom: 6rem;
+    &__item{
         margin: 0 3.5rem;
+        &:first-child {
+            background-color: white;
+        }
     }
 }
 
@@ -501,12 +511,12 @@ p {
     text-align: center;
     &__rate {
         flex: 1 1 77%;
-        padding: 1rem;
+        padding: 1.2rem;
     }
     &__discount {
         flex: 1 1 23%;
         background-color: $brend-color;
-        padding: 1rem;
+        padding: 1.2rem;
         position: relative;
         &::before {
             content: '';
@@ -530,15 +540,16 @@ p {
     max-width: 41.2rem;
     height: auto;
     display: flex;
-    margin: 2rem 0 4rem;
+    margin-top: 1.5rem;
 }
 
 .pic {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: white;
     &--sm {
-        width: calc(41.2rem / 5);
+        width: calc(100% / 5);
         
     }
 }
@@ -721,6 +732,7 @@ video  {
 // Footer
 
 .footer {
+    background-color: $textColor-light;
     .container {
     display: flex;
     justify-content: space-between;

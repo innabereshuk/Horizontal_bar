@@ -1,7 +1,7 @@
 (function(){
     'use strict';
 
-    let i=0;
+    let i=0, rotateCount = 0;
     let image = document.getElementById("img");
     let imgs = new Array('image/turnik.png', 'image/turnik2.png', 'image/turnik3.png', 'image/turnik4.png', 'image/turnik5.png');
 
@@ -35,13 +35,17 @@ function imagesrc(){
 // Добавляет событие при клике на кнопку
   btn1.addEventListener('click', function() {
           imgsrc();
+          rotateCount++;
+          btn1.style.transform = "rotate(" +rotateCount*(-360) + "deg)";
          
       });
 
   btn2.addEventListener('click', function() {
       imagesrc();
-         
-      });
+      rotateCount++;
+      btn2.style.transform = "rotate(" +rotateCount*(-360) + "deg)";
+      
+    });
     
 // Функция, меняющая цвет иконки на кнопке с ограничением в 1с
       function colorBtn() {
@@ -65,14 +69,14 @@ function imagesrc(){
 // Функция, поворачивающая кнопку при смене каждой картинки на 360 градусов
 
       function rotate() {
-          btn1.style.transform = "rotate(" +i*(-360) + "deg)";
-          window.requestAnimationFrame(rotate);
+          rotateCount++;
+          btn1.style.transform = "rotate(" +rotateCount*(-360) + "deg)";
       }
       let id = window.requestAnimationFrame(rotate);
 
       function rotate1() {
-          btn2.style.transform = "rotate(" +i*(-360) + "deg)";
-          window.requestAnimationFrame(rotate);
+         rotateCount++;
+          btn2.style.transform = "rotate(" +rotateCount*(-360) + "deg)";
       }
       let id1 = window.requestAnimationFrame(rotate);
 
