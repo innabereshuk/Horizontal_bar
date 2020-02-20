@@ -49,6 +49,7 @@
                         </div>
                         <div class="image">
                             <img class="image__pic" src="image/kach.png" alt="Kach">
+                            <div id="counter" class="poster delay" data-class="zoomIn"></div>
                             <div class="image__content image__content--circle">
                                 <span class="line-through">4 500 р.</span>
                                 <span class="red">3 890</span>
@@ -458,7 +459,14 @@
        </div>
     </footer>
     
-
+    <script>
+          
+            let poster = document.querySelector('.poster:not(.animated)');
+           let animation = poster.getAttribute('data-class');
+             poster.classList.add('animated');
+            poster.classList.add(animation);
+        
+        </script>
    
             
        

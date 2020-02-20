@@ -2,25 +2,58 @@
     'use strict';
 
     let i=0, rotateCount = 0;
-    let image = document.getElementById("img");
-    let imgs = new Array('image/turnik.png', 'image/turnik2.png', 'image/turnik3.png', 'image/turnik4.png', 'image/turnik5.png');
-
+   
+    // let imgs = new Array('image/turnik.png', 'image/turnik2.png', 'image/turnik3.png', 'image/turnik4.png', 'image/turnik5.png');
+  
     let img = document.getElementById("img2");
     let images = new Array('image/turnik.png', 'image/turnik2.png', 'image/turnik3.png', 'image/turnik4.png', 'image/turnik5.png');
    
     let btn1 = document.getElementById("btn1");
     let btn2 = document.getElementById("btn2");
 
-//  ФУНКЦИЯ, ВЫВОДЯЩАЯ КАРТИКИ ПО ОЧЕРЕДИ ИЗ МАССИВА imgs
-function imgsrc(){
-  i++;
-  image.src = imgs[i];
-        
-      if (i == imgs.length) {
-          i = 0;
-          image.src = imgs[i];
-          }
-      };
+    
+    let num = 0;
+
+    let imgs = [
+        {
+        src: 'image/turnik.png',
+        number: 1
+         },
+         {
+        src:'image/turnik2.png',
+        number: 2
+         },
+         {
+        src: 'image/turnik3.png',
+        number: 3
+        },
+         {
+        src: 'image/turnik4.png',
+        number:4
+         },
+         {
+        src: 'image/turnik5.png',
+        number: 5
+         }
+    ];
+
+    
+    //  ФУНКЦИЯ, ВЫВОДЯЩАЯ КАРТИКИ ПО ОЧЕРЕДИ ИЗ МАССИВА imgs
+   
+    
+    function imgsrc(){
+
+        imgs.src = imgs[i];
+        document.getElementById("img").src = imgs[i].src;
+
+        num = imgs[i].number;
+        document.getElementById('counter').innerHTML = num;
+                
+        if (i == imgs.length) {
+             i = 0;
+        }
+    }; 
+
 
 function imagesrc(){
         i++;
