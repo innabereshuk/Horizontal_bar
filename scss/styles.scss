@@ -3,7 +3,7 @@
 @import 'normalize';
 @import 'variables';
 @import 'mixins';
-@import 'animate';
+// @import 'animate';
 
 
 
@@ -128,7 +128,7 @@ a, button, input {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 12.5rem 2.5rem 0;
+    padding: 10.5rem 2.5rem 0;
     
 }
 
@@ -151,13 +151,14 @@ a, button, input {
     #counter {
         width: 100%;
         height: 13rem;
-        font-weight: 700;
+        font-weight: 300;
         padding-top: 2rem;
-        color: $brend-color;
+        color: rgb(212, 216, 224);
         font-size: 6rem;
         text-align: center;
         opacity: .6;
-        text-shadow: 2px 0px 7px rgba(231, 190, 7, 0.69);
+        text-shadow: 4px 1px 2px #515B70;
+        transform: scale(1.3);
     }
     &__content {
        @include font(1.8rem, $textColor-dark, 300, $text-ff, 1.2);
@@ -302,23 +303,45 @@ a, button, input {
     }
     &__label {
         align-self: center;
-        display: inline-flex;
-        justify-content: flex-start;
+        display: flex;
+        justify-content: center;
         align-items: center;
         width: 93%;
+        margin: 0 auto;
         margin: .5rem 0;
-        input {
-            margin-right: 1rem;
-            width: 2rem;
-            height: 2rem;
-        }
-        label {
-            @include font(1.4rem, $textColor-dark, 300, $text-ff, 1.2);
-            width: 100%;
-            
-        }
     }
 }
+
+.checkbox {
+    @include font(1.4rem, $textColor-dark, 300, $text-ff, 1.2);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    &__input {
+        position: absolute;
+        width: 100%;
+        opacity: 0;
+        &:checked + span {
+            background-color: red;
+            border: 3px solid rgb(182, 182, 182);
+
+        }
+    }
+    &__text {
+        display: block;
+        padding: 3px;
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgb(182, 182, 182);
+        background-color: rgb(202, 202, 202);
+        
+    }
+
+}
+          
 
 [type="text"], [type="tel"], [type="email"] {
     width: 93%;
@@ -343,7 +366,7 @@ a, button, input {
 
 [type="button"] {
     @include btn-red;
-    margin-top: .5rem;
+    margin-top: 1rem;
     &:hover,
     &:focus,
     &:active {
@@ -432,6 +455,63 @@ a, button, input {
     margin: 0;
     }
 }
+
+// ModalWindow
+
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include font(1.6rem, $btn-red, 300, $text-ff, 1);
+    background: rgba(0,0,0,0.8);
+    z-index: 99999;     
+    transition: opacity 400ms ease-in;
+    display: none;
+    pointer-events: none;
+    h2 {
+        text-align: center;
+    }
+}
+
+.modal:target {
+    display: block;
+    pointer-events: auto;
+}
+        
+.modal > div {
+    width: 800px;
+    position: relative;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 10px;
+    background: #fff;
+}
+
+.close {
+    background: #88888a;
+    color: #FFFFFF;
+    line-height: 40px;
+    font-size: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 40px;
+    text-decoration: none;
+    font-weight: 400;
+    border-radius: 30px;
+   box-shadow: 1px 1px 3px #000;
+}
+    
+       
+.close:hover { 
+    background: $brend-color; 
+}
+    
+    
+    
 
 
 
@@ -764,6 +844,10 @@ video  {
             max-width: 100%;
         }
     }
+}
+
+.new {
+    animation-iteration-count: infinite;
 }
 
 

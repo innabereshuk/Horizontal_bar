@@ -48,14 +48,14 @@
 
         num = imgs[i].number;
         document.getElementById('counter').innerHTML = num;
-                
+
+        
+        
         if (i == imgs.length) {
-             i = 0;
+            i = 0;
         }
     }; 
-
-
-function imagesrc(){
+   function imagesrc(){
         i++;
         img.src=images[i];
         

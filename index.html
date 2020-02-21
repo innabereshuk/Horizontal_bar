@@ -7,6 +7,7 @@
     <title>Turniks</title>
     <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 
@@ -49,7 +50,7 @@
                         </div>
                         <div class="image">
                             <img class="image__pic" src="image/kach.png" alt="Kach">
-                            <div id="counter" class="poster delay" data-class="zoomIn"></div>
+                            <div id="counter" class="animated zoomIn new"></div>
                             <div class="image__content image__content--circle">
                                 <span class="line-through">4 500 р.</span>
                                 <span class="red">3 890</span>
@@ -66,17 +67,23 @@
                             <input type="tel" name="phone" placeholder="Телефон">
                             <input type="email" name="email" placeholder="E-mail">
                             <div class="form__label">
-                                <input type="checkbox" name="one" id="one">
-                                <label for="#one">Крюки для перекладины и тяги (650 руб.)</label>
-                                <a href="#" class="ico">
+                                <label for="#one" class="checkbox">
+                                     <input type="checkbox" name="one" class="checkbox__input" id="one">
+                                     <span class="checkbox__text"></span>
+                                     Крюки для перекладины и тяги (650 руб.)
+                                </label>
+                                <a href="#openModal" title="Открыть" class="ico">
                                     <i class="fas fa-question-circle"></i>
                                 </a>
                             </div>
                                 
                             <div class="form__label">
-                                <input type="checkbox" name="two" id="two">
-                                <label for="#two">Резиновые петли (750 руб.)</label>
-                                <a href="#" class="ico">
+                                <label for="#two" class="checkbox">
+                                    <input type="checkbox" name="two" class="checkbox__input" id="two">
+                                    <span class="checkbox__text"></span>
+                                    Резиновые петли (750 руб.)
+                               </label>
+                                <a href="#openModal" title="Открыть" class="ico">
                                     <i class="fas fa-question-circle"></i>
                                 </a>
                             </div>
@@ -102,6 +109,33 @@
                         </div>
                   </div>
                 </div>
+
+
+                <div id="openModal" class="modal">
+                    <div>
+                       <a href="#close" title="Закрыть" class="close">X</a>
+                        <h2>Модальное окно</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, nesciunt hic veritatis laboriosam accusantium recusandae ipsum nam! Id repudiandae laborum delectus. Omnis ex similique officiis maxime dolor deleniti quia dolorum!
+                        Distinctio veritatis aliquid corporis recusandae quos qui autem illo vel dolor obcaecati in nesciunt deserunt accusantium voluptate maiores, asperiores facilis voluptatibus numquam voluptatum officia quae ipsa consequatur error. Laudantium, fuga.
+                        Veritatis, distinctio? Atque ex ea ipsam facilis nulla reprehenderit eius neque, assumenda quidem consequuntur esse voluptatum repellendus, rerum molestiae enim cupiditate totam! Odit temporibus eius iure reiciendis, officia minima suscipit.
+                       </p>
+                        <p>Voluptas, nesciunt hic veritatis laboriosam accusantium recusandae ipsum nam! Id repudiandae laborum delectus. Omnis ex similique officiis maxime dolor deleniti quia dolorum!</p>
+                     </div>
+                </div>
+
+                <div id="openModalTwo" class="modal">
+                    <div>
+                       <a href="#close" title="Закрыть" class="close">X</a>
+                        <h2>Модальное окно</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptas, nesciunt hic veritatis laboriosam accusantium recusandae ipsum nam! Id repudiandae laborum delectus. Omnis ex similique officiis maxime dolor deleniti quia dolorum!
+                        Distinctio veritatis aliquid corporis recusandae quos qui autem illo vel dolor obcaecati in nesciunt deserunt accusantium voluptate maiores, asperiores facilis voluptatibus numquam voluptatum officia quae ipsa consequatur error. Laudantium, fuga.
+                        Veritatis, distinctio? Atque ex ea ipsam facilis nulla reprehenderit eius neque, assumenda quidem consequuntur esse voluptatum repellendus, rerum molestiae enim cupiditate totam! Odit temporibus eius iure reiciendis, officia minima suscipit.
+                       </p>
+                        <p>Voluptas, nesciunt hic veritatis laboriosam accusantium recusandae ipsum nam! Id repudiandae laborum delectus. Omnis ex similique officiis maxime dolor deleniti quia dolorum!</p>
+                     </div>
+                </div>
+
+
             </div>
         </section>
 
@@ -403,19 +437,25 @@
                             <input type="tel" name="phone" placeholder="Телефон">
                             <input type="email" name="email" placeholder="E-mail">
                             <div class="form__label">
-                                <input type="checkbox" name="one2" id="one2">
-                                <label for="#one2">Крюки для перекладины и тяги (650 руб.)</label>
-                                <a href="#" class="ico">
-                                    <i class="fas fa-question-circle"></i>
-                                </a>
+                                <label for="#one2" class="checkbox">
+                                    <input type="checkbox" name="one2" class="checkbox__input" id="one2">
+                                    <span class="checkbox__text"></span>
+                                    Крюки для перекладины и тяги (650 руб.)
+                               </label>
+                               <a href="#" class="ico">
+                                   <i class="fas fa-question-circle"></i>
+                               </a>
                             </div>
                                 
                             <div class="form__label">
-                                <input type="checkbox" name="two2" id="two2">
-                                <label for="#two2">Резиновые петли (750 руб.)</label>
-                                <a href="#" class="ico">
-                                    <i class="fas fa-question-circle"></i>
-                                </a>
+                                <label for="#two2" class="checkbox">
+                                    <input type="checkbox" name="#two2" class="checkbox__input" id="#two2">
+                                    <span class="checkbox__text"></span>
+                                    Крюки для перекладины и тяги (650 руб.)
+                               </label>
+                               <a href="#" class="ico">
+                                   <i class="fas fa-question-circle"></i>
+                               </a>
                             </div>
                             <input type="button" form="#form2" value="Заказать">
                         </form>
@@ -459,16 +499,7 @@
        </div>
     </footer>
     
-    <script>
-          
-            let poster = document.querySelector('.poster:not(.animated)');
-           let animation = poster.getAttribute('data-class');
-             poster.classList.add('animated');
-            poster.classList.add(animation);
-        
-        </script>
-   
-            
+              
        
     <script src="js/switch.js"></script>
     <script src="js/countdown.js"></script>
